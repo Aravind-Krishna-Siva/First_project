@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Royal Scroll — Sacred Places</title>
+<title>Royal Scroll — Sacred Wisdom</title>
 <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Satisfy&display=swap" rel="stylesheet">
 <style>
 body {
@@ -86,9 +86,27 @@ p {
     color: #4b3a1f;
 }
 
-/* Hidden background audio */
+/* Hidden audio player */
 #audioPlayer {
     display: none;
+}
+
+/* Start music button */
+#startMusicBtn {
+    font-family: 'Satisfy', cursive;
+    font-size: 24px;
+    padding: 10px 25px;
+    background-color: #6b3e0a;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    display: block;
+    margin: 20px auto;
+}
+#startMusicBtn:hover {
+    background-color: #4f2d0a;
 }
 </style>
 </head>
@@ -98,13 +116,16 @@ p {
     <div class="flourish-top">✦ ✧ ✦</div>
     <h1>Sacred Wisdom</h1>
 
+    <!-- Music start button -->
+    <button id="startMusicBtn">Start Sacred Music</button>
+
     <div class="button-container">
         <button class="toggle-btn" onclick="showSection('arunachala')">Arunachala Siva</button>
         <button class="toggle-btn" onclick="showSection('tirumala')">Tirumala</button>
     </div>
 
-    <!-- Hidden background audio, autoplay-friendly -->
-    <audio id="audioPlayer" autoplay loop muted>
+    <!-- Hidden audio -->
+    <audio id="audioPlayer" loop>
         <source src="https://raw.githubusercontent.com/Aravind-Krishna-Siva/First_project/main/Krishna.mp3" type="audio/mpeg">
     </audio>
 
@@ -121,12 +142,14 @@ p {
 </div>
 
 <script>
-// Play background music on first interaction (unmute)
+// Play background music after first click on Start button
 const audio = document.getElementById('audioPlayer');
-document.body.addEventListener('click', () => {
-    audio.muted = false;
-    audio.play();
-}, { once: true });
+const startBtn = document.getElementById('startMusicBtn');
+
+startBtn.addEventListener('click', () => {
+    audio.play().catch(e => console.log("Autoplay blocked, will play after interaction."));
+    startBtn.style.display = 'none'; // hide button
+});
 
 // Toggle content sections
 function showSection(id) {
@@ -134,7 +157,7 @@ function showSection(id) {
     sections.forEach(sec => sec.classList.remove('active'));
     document.getElementById(id).classList.add('active');
 
-    // Optional: switch background audio if needed
+    // Optional: switch audio if different songs are used
     audio.src = "https://raw.githubusercontent.com/Aravind-Krishna-Siva/First_project/main/Krishna.mp3";
     audio.load();
     audio.play();
