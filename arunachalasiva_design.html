@@ -1,92 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>The Greatness of Arunachala Siva</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background: linear-gradient(to bottom, #fdf5e6, #e6d8b8); /* royal parchment gradient */
-            font-family: 'Roboto', serif;
-            padding: 50px;
-            display: flex;
-            justify-content: center;
-        }
+<meta charset="UTF-8">
+<title>Royal Letter - Arunachala Siva</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@700&family=Roboto&display=swap" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+    padding: 50px;
+    background: #f3e5ab; /* old parchment background color */
+    font-family: 'Roboto', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
 
-        .letter-container {
-            max-width: 800px;
-            background: #fff8dc; /* parchment color */
-            padding: 50px;
-            border: 8px solid #8b4513;
-            border-radius: 20px;
-            box-shadow: 
-                0 10px 20px rgba(0,0,0,0.3),       /* outer shadow for depth */
-                inset 0 0 30px rgba(255,255,255,0.2); /* inner highlight for 3D effect */
-            position: relative;
-        }
+/* Parchment container */
+.letter-container {
+    max-width: 850px;
+    background: #fdf5e6;
+    padding: 60px 80px;
+    border: 12px double #b8860b; /* gold double border */
+    border-radius: 25px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5), inset 0 0 20px rgba(255,255,255,0.2);
+    position: relative;
+    background-image: url('https://i.ibb.co/4fWZp7Q/parchment-texture.jpg'); /* subtle parchment texture */
+    background-size: cover;
+}
 
-        /* Decorative corners */
-        .letter-container::before,
-        .letter-container::after {
-            content: '';
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            border: 5px solid #8b4513;
-        }
+/* Decorative corners (gold flourishes) */
+.letter-container::before,
+.letter-container::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border: 5px solid #b8860b;
+}
 
-        .letter-container::before {
-            top: -10px;
-            left: -10px;
-            border-right: none;
-            border-bottom: none;
-            border-radius: 10px 0 0 0;
-        }
+.letter-container::before {
+    top: -15px;
+    left: -15px;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 15px 0 0 0;
+}
 
-        .letter-container::after {
-            bottom: -10px;
-            right: -10px;
-            border-left: none;
-            border-top: none;
-            border-radius: 0 0 10px 0;
-        }
+.letter-container::after {
+    bottom: -15px;
+    right: -15px;
+    border-left: none;
+    border-top: none;
+    border-radius: 0 0 15px 0;
+}
 
-        h1 {
-            text-align: center;
-            font-family: 'Great Vibes', cursive;
-            font-size: 60px;
-            color: #8b0000;
-            margin-bottom: 40px;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-        }
+/* Heading with gold embossed 3D style */
+h1 {
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 72px;
+    color: #b8860b;
+    margin-bottom: 40px;
+    text-shadow: 
+        2px 2px 0 #8b5a00,
+        4px 4px 5px rgba(0,0,0,0.4);
+}
 
-        p {
-            font-size: 20px;
-            line-height: 1.8;
-            text-align: justify;
-            margin-bottom: 20px;
-        }
+/* Paragraph styling */
+p {
+    font-size: 22px;
+    line-height: 1.9;
+    text-align: justify;
+    color: #3b2f2f;
+    margin-bottom: 25px;
+}
 
-        .highlight {
-            font-weight: bold;
-            color: #006400;
-        }
+/* Highlighted text */
+.highlight {
+    font-weight: bold;
+    color: #8b0000;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
 
-        .footer {
-            text-align: right;
-            font-style: italic;
-            margin-top: 40px;
-            font-size: 18px;
-        }
-    </style>
+/* Footer for royal signature */
+.footer {
+    text-align: right;
+    font-style: italic;
+    font-size: 20px;
+    margin-top: 50px;
+    color: #4b2e05;
+}
+
+/* Optional flourish at the top */
+.flourish {
+    text-align: center;
+    font-size: 50px;
+    color: #b8860b;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+}
+</style>
 </head>
 <body>
-    <div class="letter-container">
-        <h1>Arunachala Siva</h1>
-        <p>Arunachala Siva represents the eternal truth, inner silence, and the divine light that guides humanity toward self-realization. Arunachala is not merely a mountain but a living embodiment of Lord Siva Himself.</p>
-        <p>Devotees believe that circumambulating Arunachala dissolves karma, purifies the soul, and leads one closer to liberation. Arunachala Siva teaches that true greatness lies in stillness, surrender, and unwavering devotion.</p>
-        <p class="highlight">His presence inspires humility, compassion, and the realization that the divine resides within all beings.</p>
-        <p class="footer">May Arunachala Siva bless all seekers.</p>
-    </div>
+<div class="letter-container">
+    <div class="flourish">✦✧✦</div>
+    <h1>Arunachala Siva</h1>
+    <p>Arunachala Siva represents the eternal truth, inner silence, and the divine light that guides humanity toward self-realization. Arunachala is not merely a mountain but a living embodiment of Lord Siva Himself.</p>
+    <p>Devotees believe that circumambulating Arunachala dissolves karma, purifies the soul, and leads one closer to liberation. Arunachala Siva teaches that true greatness lies in stillness, surrender, and unwavering devotion.</p>
+    <p class="highlight">His presence inspires humility, compassion, and the realization that the divine resides within all beings.</p>
+    <p class="footer">May Arunachala Siva bless all seekers.</p>
+</div>
 </body>
 </html>
