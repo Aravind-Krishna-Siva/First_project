@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Royal Scroll — Sacred Places</title>
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Satisfy&display=swap" rel="stylesheet">
+<style>
+body {
+    background: url('https://i.ibb.co/6RJzHHh/parchment-bg.jpg') center/cover no-repeat;
+    font-family: 'Satisfy', cursive;
+    margin: 0;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.letter-container {
+    max-width: 850px;
+    background: rgba(255,250,240,0.95);
+    padding: 60px 80px;
+    border: 12px double #b8860b;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    position: relative;
+}
+
+h1 {
+    font-family: 'UnifrakturCook', cursive;
+    font-size: 72px;
+    color: #6b3e0a;
+    text-shadow: 2px 2px 0px #3e260e, 4px 4px 5px rgba(0,0,0,0.4);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+p {
+    font-size: 24px;
+    line-height: 1.8;
+    text-align: justify;
+    color: #3b2f2f;
+    margin-bottom: 25px;
+}
+
+.flourish-top {
+    text-align: center;
+    font-size: 50px;
+    color: #a57b1c;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.toggle-btn {
+    font-family: 'Satisfy', cursive;
+    font-size: 24px;
+    padding: 10px 25px;
+    margin: 0 15px;
+    background-color: #b8860b;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.toggle-btn:hover {
+    background-color: #a57b1c;
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+.footer-sign {
+    text-align: right;
+    font-style: italic;
+    font-size: 24px;
+    margin-top: 50px;
+    color: #4b3a1f;
+}
+
+/* Hidden background audio */
+#audioPlayer {
+    display: none;
+}
+</style>
+</head>
+<body>
+
+<div class="letter-container">
+    <div class="flourish-top">✦ ✧ ✦</div>
+    <h1>Sacred Wisdom</h1>
+
+    <div class="button-container">
+        <button class="toggle-btn" onclick="showSection('arunachala')">Arunachala Siva</button>
+        <button class="toggle-btn" onclick="showSection('tirumala')">Tirumala</button>
+    </div>
+
+    <!-- Hidden background audio, autoplay-friendly -->
+    <audio id="audioPlayer" autoplay loop muted>
+        <source src="https://raw.githubusercontent.com/Aravind-Krishna-Siva/First_project/main/Krishna.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Content Sections -->
+    <div id="arunachala" class="content-section active">
+        <p><strong>Arunachala Siva:</strong> Arunachala Siva represents eternal truth, inner silence, and divine light. Devotees circumambulate Arunachala to dissolve karma and purify the soul. It inspires humility, compassion, and self-realization.</p>
+    </div>
+
+    <div id="tirumala" class="content-section">
+        <p><strong>Tirumala:</strong> Tirumala is home to Lord Venkateswara. Pilgrims visit for blessings, prosperity, and spiritual growth. The temple’s rituals inspire devotion, discipline, and connection to the divine.</p>
+    </div>
+
+    <p class="footer-sign">✦ Eternal Seeker ✦</p>
+</div>
+
+<script>
+// Play background music on first interaction (unmute)
+const audio = document.getElementById('audioPlayer');
+document.body.addEventListener('click', () => {
+    audio.muted = false;
+    audio.play();
+}, { once: true });
+
+// Toggle content sections
+function showSection(id) {
+    const sections = document.querySelectorAll('.content-section');
+    sections.forEach(sec => sec.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+
+    // Optional: switch background audio if needed
+    audio.src = "https://raw.githubusercontent.com/Aravind-Krishna-Siva/First_project/main/Krishna.mp3";
+    audio.load();
+    audio.play();
+}
+</script>
+
+</body>
+</html>
