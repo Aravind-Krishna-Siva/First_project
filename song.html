@@ -86,14 +86,11 @@ p {
     color: #4b3a1f;
 }
 
-.audio-container {
-    text-align: center;
-    margin-bottom: 30px;
-}
-iframe {
-    border: none;
-    border-radius: 15px;
-    box-shadow: 2px 2px 20px rgba(0,0,0,0.5);
+/* Hidden YouTube player */
+#youtubePlayer {
+    width: 0;
+    height: 0;
+    border: 0;
 }
 </style>
 </head>
@@ -108,16 +105,6 @@ iframe {
         <button class="toggle-btn" onclick="showSection('tirumala')">Tirumala</button>
     </div>
 
-    <div class="audio-container" id="youtubeContainer">
-        <!-- YouTube Video Embed for background music -->
-        <iframe id="youtubePlayer" width="560" height="315"
-            src="https://www.youtube.com/embed/T_v7wOX2hFM?autoplay=1&loop=1&playlist=T_v7wOX2hFM"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-        </iframe>
-    </div>
-
     <!-- Content Sections -->
     <div id="arunachala" class="content-section active">
         <p><strong>Arunachala Siva:</strong> Arunachala Siva represents eternal truth, inner silence, and divine light. Devotees circumambulate Arunachala to dissolve karma and purify the soul. It inspires humility, compassion, and self-realization.</p>
@@ -130,18 +117,21 @@ iframe {
     <p class="footer-sign">✦ Eternal Seeker ✦</p>
 </div>
 
+<!-- Hidden YouTube Background Player -->
+<iframe id="youtubePlayer" src="https://www.youtube.com/embed/T_v7wOX2hFM?autoplay=1&loop=1&playlist=T_v7wOX2hFM&controls=0&mute=0&modestbranding=1" allow="autoplay"></iframe>
+
 <script>
 function showSection(id) {
     const sections = document.querySelectorAll('.content-section');
     sections.forEach(sec => sec.classList.remove('active'));
     document.getElementById(id).classList.add('active');
 
-    // Change YouTube video per section (optional)
+    // Change background music to another YouTube video if needed
     const player = document.getElementById('youtubePlayer');
     if (id === 'arunachala') {
-        player.src = "https://www.youtube.com/embed/T_v7wOX2hFM?autoplay=1&loop=1&playlist=T_v7wOX2hFM";
+        player.src = "https://www.youtube.com/embed/T_v7wOX2hFM?autoplay=1&loop=1&playlist=T_v7wOX2hFM&controls=0&modestbranding=1";
     } else if (id === 'tirumala') {
-        player.src = "https://www.youtube.com/embed/YOUR_TIRUMALA_VIDEO_ID?autoplay=1&loop=1&playlist=YOUR_TIRUMALA_VIDEO_ID";
+        player.src = "https://www.youtube.com/embed/YOUR_TIRUMALA_VIDEO_ID?autoplay=1&loop=1&playlist=YOUR_TIRUMALA_VIDEO_ID&controls=0&modestbranding=1";
     }
 }
 </script>
