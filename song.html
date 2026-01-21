@@ -86,11 +86,9 @@ p {
     color: #4b3a1f;
 }
 
-/* Hidden YouTube player */
-#youtubePlayer {
-    width: 0;
-    height: 0;
-    border: 0;
+/* Hidden background audio */
+#audioPlayer {
+    display: none;
 }
 </style>
 </head>
@@ -105,6 +103,12 @@ p {
         <button class="toggle-btn" onclick="showSection('tirumala')">Tirumala</button>
     </div>
 
+    <!-- Hidden background audio -->
+    <audio id="audioPlayer" autoplay loop>
+        <source src="Krishna.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
     <!-- Content Sections -->
     <div id="arunachala" class="content-section active">
         <p><strong>Arunachala Siva:</strong> Arunachala Siva represents eternal truth, inner silence, and divine light. Devotees circumambulate Arunachala to dissolve karma and purify the soul. It inspires humility, compassion, and self-realization.</p>
@@ -117,22 +121,21 @@ p {
     <p class="footer-sign">✦ Eternal Seeker ✦</p>
 </div>
 
-<!-- Hidden YouTube Background Player -->
-<iframe id="youtubePlayer" src="https://www.youtube.com/embed/T_v7wOX2hFM?autoplay=1&loop=1&playlist=T_v7wOX2hFM&controls=0&mute=0&modestbranding=1" allow="autoplay"></iframe>
-
 <script>
 function showSection(id) {
     const sections = document.querySelectorAll('.content-section');
     sections.forEach(sec => sec.classList.remove('active'));
     document.getElementById(id).classList.add('active');
 
-    // Change background music to another YouTube video if needed
-    const player = document.getElementById('youtubePlayer');
-    if (id === 'arunachala') {
-        player.src = "https://www.youtube.com/embed/T_v7wOX2hFM?autoplay=1&loop=1&playlist=T_v7wOX2hFM&controls=0&modestbranding=1";
-    } else if (id === 'tirumala') {
-        player.src = "https://www.youtube.com/embed/YOUR_TIRUMALA_VIDEO_ID?autoplay=1&loop=1&playlist=YOUR_TIRUMALA_VIDEO_ID&controls=0&modestbranding=1";
+    // Optional: Change audio for different sections
+    const audio = document.getElementById('audioPlayer');
+    if(id === 'arunachala'){
+        audio.src = "Krishna.mp3"; // same or different file
+    } else if(id === 'tirumala'){
+        audio.src = "Krishna.mp3"; // replace if you have a different MP3
     }
+    audio.load();
+    audio.play();
 }
 </script>
 
