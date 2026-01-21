@@ -105,7 +105,7 @@ p {
 
     <!-- Hidden background audio -->
     <audio id="audioPlayer" autoplay loop>
-        <source src="Krishna.mp3" type="audio/mpeg">
+        <source src="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/Krishna.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
@@ -127,12 +127,12 @@ function showSection(id) {
     sections.forEach(sec => sec.classList.remove('active'));
     document.getElementById(id).classList.add('active');
 
-    // Optional: Change audio for different sections
+    // Optional: Change background music for different sections
     const audio = document.getElementById('audioPlayer');
     if(id === 'arunachala'){
-        audio.src = "Krishna.mp3"; // same or different file
+        audio.src = "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/Krishna.mp3";
     } else if(id === 'tirumala'){
-        audio.src = "Krishna.mp3"; // replace if you have a different MP3
+        audio.src = "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/Krishna.mp3"; // can use another mp3 if available
     }
     audio.load();
     audio.play();
